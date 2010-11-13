@@ -14,7 +14,7 @@
   source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=94&idline=69&stop=5414F&idstop=1669&iddirection=167&iti=1
 - location: Marie-Jose
-  direction: Boondael/Herrmann Debroux
+  direction: Louise/Rogier
   vehicle: tram
   source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=94&idline=69&stop=5460F&idstop=1688&iddirection=128&iti=2
