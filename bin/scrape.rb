@@ -9,6 +9,12 @@ require 'yaml'
 ROOT     = File.expand_path(File.dirname(__FILE__) + '/../')
 DATA_DIR = File.join ROOT, '/data'
 
+# TODO: extract:
+# * distance of time in minutes of next service
+# * any special notifications (train)
+# * name of vehicle
+# Create partials and layout
+
 class ContentStrategy
   def initialize(url)
     @doc = Nokogiri::HTML(open url)
@@ -56,7 +62,7 @@ class Source
   end
 
   def scrape
-    puts "Scraping #{location} #{direction} from #{source}"
+    puts "Scraping #{location} -> #{direction} [#{source}]"
     @content = content_strategy.new(url).content
   end
   
