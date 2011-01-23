@@ -2,7 +2,7 @@
 # TODO: notes + warnings (span.class="info")
 
 module Source
-  attr_accessor :location, :direction, :vehicle, :source, :url
+  attr_accessor :location, :direction, :vehicle, :source, :url, :service
   attr_reader :html, :doc, :content
   
   def initialize(opts)
@@ -10,6 +10,7 @@ module Source
     @direction = opts.delete "direction"
     @vehicle   = opts.delete "vehicle"
     @url       = opts.delete "url"
+    @service   = opts.delete "service"
   end
 
   def doc
