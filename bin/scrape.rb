@@ -1,13 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require 'active_support/inflector'
-require 'nokogiri'
-require 'open-uri'
-require 'yaml'
-
-ROOT     = File.expand_path(File.dirname(__FILE__) + '/../')
-DATA_DIR = File.join ROOT, '/data'
+require File.dirname(__FILE__) + '/../lib/mulberry.rb'
 
 # TODO: extract:
 # * distance of time in minutes of next service
