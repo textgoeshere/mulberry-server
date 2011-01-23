@@ -2,8 +2,8 @@ Arcades-Bourse-bus-stib:
   - 8
   - 19
 Arcades-Wiener-bus-stib:
-  - 11
-  - 20
+  - 8
+  - 19
 Solbosch-Boondael-Herrmann-Debroux-tram-stib:
   - 3
   - 5
@@ -17,16 +17,16 @@ Watermael-Gare-Heros-bus-stib:
   - 16
   - 36
 Watermael-Gare-Herrmann-Debroux-bus-stib:
-  - 8
-  - 9
+  - 16
+  - 36
 Watermael-Station-Bruxelles-Midi-train-sncb:
-  - 54
-  - 114
+  - "17:49"
+  - "18:49"
 Delta-Erasme--into-town--metro-stib:
-  - 0
-  - 10
+  - 7
+  - 17
 Delta-Herrmann-Debroux-metro-stib:
-  - 0
-  - 2
+  - 6
+  - 16
 
 

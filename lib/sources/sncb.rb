@@ -13,4 +13,12 @@ class Sncb
   def content
     doc.search("p.journey")
   end
+
+  def arrives
+    content.inject([]) do |arr, node|
+      arr.tap do
+        arr << node.search("strong").last.text if node.text =~ /Bruxelles-Midi/
+      end
+    end[0..1]
+  end  
 end
