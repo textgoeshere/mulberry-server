@@ -6,6 +6,6 @@ class Stib
   end
 
   def arrives
-    content.search("h5").map { |el| el.text }
+    content.search("h5").map { |el| el.text.split.first.to_i }[0..1]
   end
 end
