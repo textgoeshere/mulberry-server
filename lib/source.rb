@@ -1,7 +1,10 @@
+# TODO: error handling
+# TODO: notes + warnings (span.class="info")
+
 module Source
   attr_accessor :location, :direction, :vehicle, :source, :url
   attr_reader :html, :doc, :content
-    
+  
   def initialize(opts)
     @location  = opts.delete "location"
     @direction = opts.delete "direction"
