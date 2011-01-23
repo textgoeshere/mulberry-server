@@ -6,7 +6,6 @@ module Source
     @location  = opts.delete "location"
     @direction = opts.delete "direction"
     @vehicle   = opts.delete "vehicle"
-    @source    = opts.delete "source"
     @url       = opts.delete "url"
   end
 
@@ -20,5 +19,13 @@ module Source
   
   def name
     @name ||= [location, direction, vehicle, source].map { |str| str.gsub(/\W/, '-') }.join("-")
+  end
+
+  def arrives
+    []
+  end
+
+  def source
+    self.class.name.downcase
   end
 end

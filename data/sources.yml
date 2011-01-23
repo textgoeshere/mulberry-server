@@ -1,50 +1,50 @@
-- location: Arcades
+- !ruby/object:Stib
+  location: Arcades
   direction: Bourse
   vehicle: bus
-  source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=95&idline=57&stop=4359&idstop=2166&iddirection=90&iti=2
-- location: Arcades
+- !ruby/object:Stib
+  location: Arcades
   direction: Wiener
   vehicle: bus
-  source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=95&idline=57&stop=4309&idstop=2145&iddirection=115&iti=1
-- location: Solbosch
+- !ruby/object:Stib
+  location: Solbosch
   direction: Boondael/Herrmann Debroux
   vehicle: tram
-  source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=94&idline=69&stop=5413F&idstop=1668&iddirection=167&iti=1
-- location: Solbosch
+- !ruby/object:Stib
+  location: Solbosch
   direction: Louise
   vehicle: tram
-  source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=94&idline=69&stop=5461F&idstop=1689&iddirection=128&iti=2
-- location: Cimetiere d'Ixelles
+- !ruby/object:Stib
+  location: Cimetiere d'Ixelles
   direction: de Brouckere
   vehicle: bus
-  source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=71&idline=26&stop=3558&idstop=1117&iddirection=102&iti=2
-- location: Watermael Gare
+- !ruby/object:Stib
+  location: Watermael Gare
   direction: Heros
   vehicle: bus
-  source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=41&idline=51&stop=2079&idstop=1969&iddirection=149&iti=1
-- location: Watermael Gare
+- !ruby/object:Stib
+  location: Watermael Gare
   direction: Herrmann Debroux
   vehicle: bus
-  source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=41&idline=51&stop=2079&idstop=1969&iddirection=149&iti=1
-- location: Watermael Station
+- !ruby/object:Sncb
+  location: Watermael Station
   direction: Bruxelles Midi
   vehicle: train
-  source: sncb
   url: http://hari.b-rail.be/hari3/webserver1/bin/stboard.exe/eox?input=000148634&sName=Watermael&boardType=dep&time=$TIME&productsFilter=0111111000&date=$DATE&maxJourneys=10&start=yes&&getExternalStationBoard=1
-- location: Delta
+- !ruby/object:Stib
+  location: Delta
   direction: Erasme (into town)
   vehicle: metro
-  source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=5&idline=60&stop=8231&idstop=2265&iddirection=33&iti=2
-- location: Delta
+- !ruby/object:Stib
+  location: Delta
   direction: Herrmann Debroux
   vehicle: metro
-  source: stib
   url: http://m.stib.be/stop.php?lang=fr&line=5&idline=60&stop=8232&idstop=2266&iddirection=34&iti=1
