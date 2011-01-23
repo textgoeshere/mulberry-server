@@ -11,5 +11,5 @@ require 'yaml'
 ROOT     = File.expand_path(File.dirname(__FILE__) + '/../')
 DATA_DIR = File.join ROOT, '/data'
 
-require File.join ROOT, '/lib/strategies'
 require File.join ROOT, '/lib/source'
+Dir["#{ROOT}/lib/sources/*rb"].each { |f| require f }

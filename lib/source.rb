@@ -1,6 +1,6 @@
-class Source
+module Source
   attr_accessor :location, :direction, :vehicle, :source, :url
-  attr_reader :content, :html
+  attr_reader :html, :doc, :content
     
   def initialize(opts)
     @location  = opts.delete "location"
@@ -8,21 +8,17 @@ class Source
     @vehicle   = opts.delete "vehicle"
     @source    = opts.delete "source"
     @url       = opts.delete "url"
-    
-    @cs        = content_strategy.new(url)
-    @html      = @cs.doc.to_s
   end
 
-  def name
-    [location, direction, vehicle, source].map { |str| str.gsub(/\W/, '-') }.join("-")
+  def doc
+    @doc ||= Nokogiri::HTML(open url)
   end
 
-  def scrape
-    puts "Scraping #{location} -> #{direction} [#{source}]"
-    @content = @cs.content
+  def html
+    @html ||= doc.to_s
   end
   
-  def content_strategy
-    source.capitalize.constantize
+  def name
+    @name ||= [location, direction, vehicle, source].map { |str| str.gsub(/\W/, '-') }.join("-")
   end
 end
