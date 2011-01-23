@@ -1,0 +1,10 @@
+Probably don't need one fixture per source/location/direction triple - better to have multiple fixtures per source covering different cases e.g.
+         * standard
+         * with info
+         * missing data, no services
+         * Stib: more than 60mins distant to next service
+
+get info/delays/notes
+
+error handling
+
