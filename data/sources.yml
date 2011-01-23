@@ -7,7 +7,7 @@
   direction: Wiener
   vehicle: bus
   source: stib
-  url: http://m.stib.be/stop.php?lang=fr&line=95&idline=57&stop=4359&idstop=2166&iddirection=90&iti=1
+  url: http://m.stib.be/stop.php?lang=fr&line=95&idline=57&stop=4309&idstop=2145&iddirection=115&iti=1
 - location: Solbosch
   direction: Boondael/Herrmann Debroux
   vehicle: tram
@@ -17,7 +17,7 @@
   direction: Louise
   vehicle: tram
   source: stib
-  url: http://m.stib.be/stop.php?lang=fr&line=94&idline=69&stop=5414F&idstop=1669&iddirection=167&iti=1
+  url: http://m.stib.be/stop.php?lang=fr&line=94&idline=69&stop=5461F&idstop=1689&iddirection=128&iti=2
 - location: Cimetiere d'Ixelles
   direction: de Brouckere
   vehicle: bus
