@@ -5,7 +5,7 @@ class Stib
     doc.search("ul.realtime_list li")
   end
 
-  def arrivals_in
+  def arrives
     content.search("h5").map { |el| el.text }
   end
 end

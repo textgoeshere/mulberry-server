@@ -1,12 +1,13 @@
 class Sncb
-  module Source
+  include Source
     
-  def initialize(url)
+  def initialize(*args)
+    super
+    
     date = Date.today.strftime("%d/%m/%y") # 13/11/10
     time = Time.now.strftime("%H:%M") # 14:33
 
-    parsed_url = url.gsub(/^(.*)\$TIME(.*)\$DATE(.*)$/, "\\1#{time}\\2#{date}\\3")
-    super(parsed_url)
+    @url = @url.gsub(/^(.*)\$TIME(.*)\$DATE(.*)$/, "\\1#{time}\\2#{date}\\3")
   end
 
   def content

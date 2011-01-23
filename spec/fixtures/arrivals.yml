@@ -1,0 +1,32 @@
+Arcades-Bourse-bus-stib:
+  - 8
+  - 19
+Arcades-Wiener-bus-stib:
+  - 11
+  - 20
+Solbosch-Boondael-Herrmann-Debroux-tram-stib:
+  - 3
+  - 5
+Solbosch-Louise-tram-stib:
+  - 3
+  - 35
+Cimetiere-d-Ixelles-de-Brouckere-bus-stib:
+  - 2
+  - 14
+Watermael-Gare-Heros-bus-stib:
+  - 16
+  - 36
+Watermael-Gare-Herrmann-Debroux-bus-stib:
+  - 8
+  - 9
+Watermael-Station-Bruxelles-Midi-train-sncb:
+  - 54
+  - 114
+Delta-Erasme--into-town--metro-stib:
+  - 0
+  - 10
+Delta-Herrmann-Debroux-metro-stib:
+  - 0
+  - 2
+
+
