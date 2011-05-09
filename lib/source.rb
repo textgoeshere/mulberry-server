@@ -26,7 +26,11 @@ module Source
   end
 
   def description
-    "#{s.location} to #{s.direction} on #{s.vehicle} #{s.service}"
+    "#{location} to #{direction} on #{vehicle} #{service}"
+  end
+
+  def title
+    "#{service} to #{direction}"
   end
   
   def departures
