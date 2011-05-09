@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Sources" do
-  let(:arrivals) { YAML.load(open File.join(ROOT, '/spec/fixtures/arrivals.yml')) }
+  let(:departures) { YAML.load(open File.join(ROOT, '/spec/fixtures/departures.yml')) }
 
   SOURCES.each do |s|
     context s do
@@ -11,8 +11,10 @@ describe "Sources" do
         end      
       }
 
-      it "finds the correct arrival times for #{s.name}" do
-        source.arrives.should == arrivals[source.name]
+      let(:expected_source_departures) { departures[source.name] }
+
+      it "finds the correct departure times and destination for #{s.name}" do
+        source.departures.should == expected_source_departures
       end
     end
   end

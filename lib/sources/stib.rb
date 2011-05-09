@@ -5,7 +5,11 @@ class Stib
     doc.search("ul.realtime_list li")
   end
 
-  def arrives
-    content.search("h5").map { |el| el.text.split.first.to_i }[0..1]
+  def departures
+    content[0..1].map do |li|
+      time = li.search("h5").first.text.split.first.to_i
+      destination = li.search("p").first.text.strip.titleize
+      "#{time} mins, #{destination}"
+    end
   end
 end

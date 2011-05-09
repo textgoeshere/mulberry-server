@@ -5,10 +5,12 @@ class Sncb
     doc.search("p.journey")
   end
 
-  def arrives
+  def departures
     content.inject([]) do |arr, node|
       arr.tap do
-        arr << node.search("strong").last.text if node.text =~ /Bruxelles-Midi/
+        next unless node.text =~ /Bruxelles-Midi/
+        time = node.search("strong").last.text
+        arr << "#{time}, Bruxelles-Midi"
       end
     end[0..1]
   end

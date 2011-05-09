@@ -25,10 +25,10 @@ module Source
     @name ||= [location, direction, vehicle, source].map { |str| str.gsub(/\W/, '-') }.join("-")
   end
 
-  def arrives
+  def departures
     []
   end
-
+  
   def source
     self.class.name.downcase
   end
