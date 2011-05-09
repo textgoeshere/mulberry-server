@@ -6,8 +6,8 @@ SOURCES = YAML.load(open File.join(DATA_DIR, '/sources.yml'))
 html = ""
 SOURCES.each do |s|
   puts "Scraping #{s.name} [#{s.class.name}]"
-  html << "<h1><a href=\"#{s.url}\">#{s.location} to #{s.direction} via #{s.vehicle} #{s.service}</a></h1>"
-  html << s.content.inner_html
+  html << "<h1><a href=\"#{s.url}\">#{s.description}</a></h1>"
+  html << s.departures.map { |d| "<p>#{d}</p>" }.join
   html << "<hr>"
 end
 

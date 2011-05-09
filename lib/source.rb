@@ -25,6 +25,10 @@ module Source
     @name ||= [location, direction, vehicle, source].map { |str| str.gsub(/\W/, '-') }.join("-")
   end
 
+  def description
+    "#{s.location} to #{s.direction} on #{s.vehicle} #{s.service}"
+  end
+  
   def departures
     []
   end
