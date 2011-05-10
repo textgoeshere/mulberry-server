@@ -2,7 +2,9 @@
 # TODO: notes + warnings (span.class="info")
 
 module Source
-  attr_accessor :location, :direction, :vehicle, :source, :url, :service
+  include Comparable
+  
+  attr_accessor :location, :direction, :vehicle, :source, :url, :service, :weight
   attr_reader :html, :doc, :content
   
   def initialize(opts)
@@ -11,6 +13,11 @@ module Source
     @vehicle   = opts.delete "vehicle"
     @url       = opts.delete "url"
     @service   = opts.delete "service"
+    @weight    = opts.delete "weight"
+  end
+
+  def <=>(other)
+    self.weight <=> other.weight
   end
 
   def doc
@@ -35,6 +42,11 @@ module Source
   
   def departures
     []
+  end
+
+  def weight
+    @weight || 100000 # an arbitrarily big number so unweighted sources
+                      # sink to the bottom
   end
   
   def source

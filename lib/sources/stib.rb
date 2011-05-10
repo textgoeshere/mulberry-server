@@ -1,6 +1,6 @@
 class Stib
   include Source
-
+  
   def content
     doc.search("ul.realtime_list li")
   end

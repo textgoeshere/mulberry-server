@@ -7,7 +7,7 @@ SOURCES = YAML.load(open File.join(DATA_DIR, '/sources.yml'))
 
 html = ""
 lua  = ""
-SOURCES.each do |s|
+SOURCES.sort.each do |s|
   puts "Scraping #{s.name} [#{s.class.name}]"
   html << "<h1><a href=\"#{s.url}\">#{s.description}</a></h1>"
   html << s.departures.map { |d| "<p>#{d}</p>" }.join
@@ -15,14 +15,17 @@ SOURCES.each do |s|
 
   lua << %Q{
 Entry{
-  source = #{s.name}
-  title  = #{s.title}
-  description = #{s.description}
-  updated_at = #{t}
+  source = "#{s.name}",
+  title  = "#{s.title}",
+  description = "#{s.description}",
+  name = "#{s.name}",
+  location = "#{s.location}",
+  updated_at = "#{t}",
+  weight = #{s.weight},
   departures = [[
 #{s.departures.join("\n")}
-]]
-  vehicle = #{s.vehicle}
+  ]],
+  vehicle = "#{s.vehicle}"
 }
 }
 end
