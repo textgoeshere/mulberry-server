@@ -8,8 +8,9 @@ require 'open-uri'
 require 'yaml'
 
 
-ROOT     = File.expand_path(File.dirname(__FILE__) + '/../')
-DATA_DIR = File.join ROOT, '/data'
+ROOT       = File.expand_path(File.dirname(__FILE__) + '/../')
+DATA_DIR   = File.join(ROOT, '/data')
+APPLET_DIR = File.expand_path(File.join(ROOT, "/lib/applet"))
 
 require File.join ROOT, '/lib/source'
 Dir["#{ROOT}/lib/sources/*rb"].each { |f| require f }

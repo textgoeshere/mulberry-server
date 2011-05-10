@@ -31,4 +31,4 @@ Entry{
 end
 
 File.open(File.join(ROOT, 'public', "timetable_#{Time.now}.html"), "w") { |f| f << html }
-File.open(File.join(ROOT, 'public', "entries.lua"), "w") { |f| f << lua }
+File.open(File.join(APPLET_DIR, "entries.lua"), "w") { |f| f << lua }
