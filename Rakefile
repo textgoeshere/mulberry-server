@@ -9,6 +9,11 @@ namespace :applet do
       ln_s File.expand_path("./lib/applet"), Applet.dev_dir
     end
   end
+
+  desc "SCP applet to controller"
+  task :install do
+    puts %x[scp -r -v #{APPLET_DIR}/* squeezebox_controller:/usr/share/jive/applets/#{Applet.name}]
+  end
 end
 
 module Applet
