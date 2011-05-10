@@ -1,2 +1,3 @@
 public/timetable_*
 public/*.lua
+/lib/applet/entries.lua
