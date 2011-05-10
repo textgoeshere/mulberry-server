@@ -73,14 +73,15 @@ end
 function showEntry(self, entry)
    -- TODO: timer and reload
 
-   local menu = SimpleMenu("menu", {
-                              { text = "Back",
-                                sound = "WINDOWHIDE",
-                                callback = function()
-                                              window:hide()
-                                           end
-                             }
-                           })
+   -- If this menu is added, the textarea widget does not show in the controller
+   -- local menu = SimpleMenu("menu", {
+   --                            { text = "Back",
+   --                              sound = "WINDOWHIDE",
+   --                              callback = function()
+   --                                            window:hide()
+   --                                         end
+   --                           }
+   --                         })
 
 
    require(entries_filename)
@@ -91,6 +92,6 @@ function showEntry(self, entry)
    local textarea = Textarea("text", (e.description .. "\n\n----\n" .. e.departures .. "\n\n----\nUpdated at: " .. e.updated_at))
 
    window:addWidget(textarea)
-   window:addWidget(menu)
+   -- window:addWidget(menu)
    window:show()
 end
