@@ -1,12 +1,10 @@
 require './lib/mulberry.rb'
 
-DEV_SQ_APPLET_DIR = File.expand_path('~/dev/xp/squeezeplay/build/linux/share/jive/applets')
-
 namespace :applet do
   namespace :dev do
     desc "Symlinks the applet into the squeezeplay dev build applet dir"
     task :ln do
-      ln_s File.expand_path("./lib/applet"), Applet.dev_dir
+      ln_s File.expand_path("./lib/applet"), Applet.squeezeplay_applet_dir
     end
   end
 
@@ -24,8 +22,11 @@ module Applet
       File.basename(Dir["#{APPLET_DIR}/*Meta.lua"].first).split("Meta").first
     end
 
-    def dev_dir
-      File.join(DEV_SQ_APPLET_DIR, Applet.name)
+    def squeezeplay_applet_dir
+      if ENV["SQUEEZEPLAY_DIR"].nil? || ENV["SQUEEZEPLAY_DIR"].empty?
+        raise "You must set $SQUEEZEPLAY_DIR environment variable"
+      end
+      File.join(ENV["SQUEEZEPLAY_DIR"], "share", "jive", "applets", Applet.name)
     end
   end
 end
