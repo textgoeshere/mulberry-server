@@ -21,6 +21,7 @@ module Source
   end
 
   def doc
+    puts "Scraping #{name}" unless @doc
     @doc ||= Nokogiri::HTML(open url)
   end
 
@@ -51,5 +52,23 @@ module Source
   
   def source
     self.class.name.downcase
+  end
+
+  def as_json
+    {
+      :source      => name,
+      :title       => title,
+      :description => description,
+      :name        => name,
+      :location    => location,
+      :updated_at  => Time.now,
+      :weight      => weight,
+      :departures  => departures.join("\n"),
+      :vehicle     => vehicle
+    }
+  end
+
+  def to_json(*args)
+    JSON.pretty_generate(self.as_json)
   end
 end

@@ -6,11 +6,13 @@ require 'active_support/inflector'
 require 'nokogiri'
 require 'open-uri'
 require 'yaml'
-
+require 'json'
 
 ROOT       = File.expand_path(File.dirname(__FILE__) + '/../')
-DATA_DIR   = File.join(ROOT, '/data')
-APPLET_DIR = File.expand_path(File.join(ROOT, "/lib/applet"))
+DATA_DIR   = File.join(ROOT, 'data')
+PUBLIC_DIR = File.join(ROOT, 'public')
+TMP_DIR    = File.join(ROOT, 'tmp')
+APPLET_DIR = File.expand_path(File.join(ROOT, "lib", "applet"))
 
-require File.join ROOT, '/lib/source'
-Dir["#{ROOT}/lib/sources/*rb"].each { |f| require f }
+require File.join(ROOT, 'lib', 'source')
+Dir[File.join(ROOT, "lib", "sources", "*rb")].each { |f| require f }
