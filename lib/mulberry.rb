@@ -14,5 +14,5 @@ PUBLIC_DIR = File.join(ROOT, 'public')
 TMP_DIR    = File.join(ROOT, 'tmp')
 APPLET_DIR = File.expand_path(File.join(ROOT, "lib", "applet"))
 
-require File.join(ROOT, 'lib', 'source')
+Dir[File.join(ROOT, "lib", "*rb")].each { |f| require f }
 Dir[File.join(ROOT, "lib", "sources", "*rb")].each { |f| require f }

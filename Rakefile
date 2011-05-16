@@ -1,5 +1,12 @@
 require './lib/mulberry.rb'
 
+namespace :mulberry do
+  desc "Scrapes the websites and updates data.json"
+  task :update do
+    Mulberry.update
+  end
+end
+
 namespace :applet do
   namespace :dev do
     desc "Symlinks the applet into the squeezeplay dev build applet dir"
