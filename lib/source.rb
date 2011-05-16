@@ -60,7 +60,7 @@ module Source
       :description => description,
       :name        => name,
       :location    => location,
-      :updated_at  => Time.now,
+      :updated_at  => Time.now.to_i,
       :weight      => weight,
       :departures  => departures.join("\n"),
       :vehicle     => vehicle

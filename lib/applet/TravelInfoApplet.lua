@@ -19,6 +19,8 @@ Applet related methods are described in L<jive.Applet>.
 local oo               = require("loop.simple")
 local string           = require("string")
 local io               = require("io")
+local os               = require("os")
+local math             = require("math")
 
 local Applet           = require("jive.Applet")
 local Window           = require("jive.ui.Window")
@@ -102,7 +104,14 @@ function showEntry(self, entry)
       elseif t then
          local e = t[entry.source]
          if e then
-            textarea:setValue(e.description .. "\n\n----\n" .. e.departures .. "\n\n----\nUpdated at: " .. e.updated_at)
+            local age_in_seconds = os.time() - e.updated_at
+            local age_str = ""
+            if age_in_seconds > 120 then
+               age_str = math.floor(age_in_seconds / 60) .. " minutes ago"
+            else
+               age_str = age_in_seconds .. " seconds ago"
+            end
+            textarea:setValue(e.description .. "\n\n----\n" .. e.departures .. "\n\n----\nUpdated " .. age_str)
          else
             textarea:setvalue("Sorry, there is no travel info for this service")
          end
