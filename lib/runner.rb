@@ -14,6 +14,11 @@ module Mulberry
     end
   end
 
+  def self.clean
+    FileUtils.rm(Dir.glob(File.join(PUBLIC_DIR, "*.json")))
+    FileUtils.rm(Dir.glob(File.join(TMP_DIR, "*.html")))
+  end
+
   def self.sources
     @sources ||= YAML.load(open File.join(DATA_DIR, '/sources.yml'))
   end

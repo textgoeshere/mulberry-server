@@ -5,6 +5,11 @@ namespace :mulberry do
   task :update do
     Mulberry.update
   end
+
+  desc "Deletes data and tmp files"
+  task :clean do
+    Mulberry.clean
+  end
 end
 
 namespace :applet do
