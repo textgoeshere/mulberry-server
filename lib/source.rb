@@ -21,7 +21,6 @@ module Source
   end
 
   def doc
-    puts "Scraping #{name}" unless @doc
     @doc ||= Nokogiri::HTML(open url)
   end
 
