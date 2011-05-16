@@ -1,5 +1,6 @@
 module Mulberry
   def self.update
+    puts "<< Running #{Time.now} >>"
     File.open(File.join(TMP_DIR, "timetable_#{Time.now}.html"), "w") do |f| 
       sources.sort.each do |s|
         puts "Scraping #{s.name}"
