@@ -14,15 +14,22 @@ end
 
 namespace :applet do
   namespace :dev do
-    desc "Symlinks the applet into the squeezeplay dev build applet dir"
+    desc "Symlinks the applet into $squeezeplay_path applet dir"
     task :ln do
-      ln_s File.expand_path("./lib/applet"), Applet.squeezeplay_applet_dir
+      if File.exists?(Applet.squeezeplay_applet_dir)
+        puts "Already symlinked"
+      else
+        ln_s File.expand_path("./lib/applet"), Applet.squeezeplay_applet_dir
+      end
     end
   end
 
   desc "SCP applet to controller"
   task :install do
-    puts %x[scp -r -v #{APPLET_DIR}/* squeezebox_controller:/usr/share/jive/applets/#{Applet.name}]
+    if ENV["device"].nil? || ENV["device"].empty?
+      raise "Usage: rake applet:install device=HOSTNAME_OF_SQUEEZEPLAY_DEVICE"
+    end
+    puts %x[scp -r -v #{APPLET_DIR}/* #{ENV['device']}:/usr/share/jive/applets/#{Applet.name}]
   end
 end
 
@@ -35,10 +42,10 @@ module Applet
     end
 
     def squeezeplay_applet_dir
-      if ENV["SQUEEZEPLAY_DIR"].nil? || ENV["SQUEEZEPLAY_DIR"].empty?
-        raise "You must set $SQUEEZEPLAY_DIR environment variable"
+      if ENV["squeezeplay_path"].nil? || ENV["squeezeplay_path"].empty?
+        raise "Usage: rake applet:dev:ln squeezeplay_path=PATH_TO_YOUR_SQUEEZEPLAY"
       end
-      File.join(ENV["SQUEEZEPLAY_DIR"], "share", "jive", "applets", Applet.name)
+      File.join(ENV["squeezeplay_path"], "share", "jive", "applets", Applet.name)
     end
   end
 end
